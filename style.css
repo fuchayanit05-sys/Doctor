@@ -1,0 +1,269 @@
+body {
+    font-family: 'Sarabun', sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+:root {
+    --oasis-teal: #40b7bc;
+    --line-green: #00c300;
+}
+
+/* Navbar */
+.btn-line {
+    background-color: var(--line-green);
+    color: white;
+    border-radius: 5px;
+    padding: 8px 15px;
+    text-decoration: none;
+}
+
+/* Slider */
+#heroCarousel {
+    position: relative;
+    height: 75vh;
+    background-color: #000;
+}
+
+.bg-slide {
+    height: 75vh;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.65); /* ปรับให้ภาพมืดลงเพื่อตัวหนังสือชัดขึ้น */
+}
+
+/* ใส่รูปภาพ */
+.slide-1 { background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1500'); }
+.slide-3 { background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1500'); }
+
+/* ข้อความ Overlay */
+.hero-overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 100%;
+    pointer-events: none; /* เพื่อให้ยังกดปุ่มสไลด์ที่อยู่ข้างหลังได้ */
+}
+
+.hero-overlay-content button {
+    pointer-events: auto; /* ให้ปุ่มกลับมากดได้ปกติ */
+}
+
+.btn-teal-lg {
+    background-color: var(--oasis-teal);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+}
+
+.info-section {
+    background-color: var(--oasis-teal);
+}
+
+/* แก้บัคมือถือ */
+@media (max-width: 768px) {
+    #heroCarousel, .bg-slide { height: 60vh; }
+    .display-3 { font-size: 2.5rem; }
+}
+/* จัดการตำแหน่ง Dropdown ให้ตรงกับเมนูบริการ */
+.nav-item.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    top: 100%; /* ให้ลงมาต่อจาก navbar พอดี */
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* สั่งให้ Dropdown อยู่กึ่งกลางของคำว่าบริการ */
+    border-radius: 12px;
+    padding: 15px 0;
+    min-width: 280px; /* ขยายความกว้างให้พอดีกับข้อความ */
+    margin-top: 10px !important; /* ระยะห่างจาก navbar */
+}
+
+/* ตกแต่งรายการเมนูข้างใน */
+.dropdown-item {
+    color: #4a4a4a;
+    font-size: 15px;
+    padding: 10px 20px;
+    text-align: center; /* จัดข้อความกึ่งกลางตามรูปตัวอย่าง */
+    font-weight: 300;
+}
+
+.dropdown-item:hover {
+    background-color: transparent;
+    color: var(--oasis-teal); /* เปลี่ยนเป็นสีเขียวฟ้าเมื่อ Hover */
+}
+
+/* เอาลูกศร Dropdown ของ Bootstrap ออก (เพื่อให้เหมือนรูปต้นฉบับ) */
+.dropdown-toggle::after {
+    display: none;
+}
+
+/* การตั้งค่า Font และสี */
+body {
+    font-family: 'Sarabun', sans-serif;
+    color: #444;
+}
+
+:root {
+    --oasis-teal: #40b7bc;
+}
+
+.text-teal { color: var(--oasis-teal); }
+
+/* Card Style */
+.service-card {
+    transition: all 0.3s ease;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-card img {
+    height: 380px; /* รูปแนวตั้งตามแบบ */
+    object-fit: cover;
+}
+
+.btn-outline-teal {
+    color: var(--oasis-teal);
+    border-color: var(--oasis-teal);
+    font-size: 13px;
+}
+
+.btn-outline-teal:hover {
+    background-color: var(--oasis-teal);
+    color: white;
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #d1dbd6; /* สีเทาอมเขียวตามรูป */
+}
+
+/* Scroll Smooth */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* ปรับ Dropdown ให้สวยงาม */
+.dropdown-menu-center {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    min-width: 250px;
+    padding: 15px 0;
+    border-radius: 12px;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 8px 20px;
+}
+
+/* บังคับให้เมนู Dropdown อยู่หน้าสุดเสมอ */
+.navbar {
+    z-index: 1050; /* ค่ามาตรฐานของ Bootstrap สำหรับ Nav */
+}
+
+.dropdown-menu {
+    z-index: 2000 !important; /* ดันให้สูงกว่า Overlay แน่นอน */
+}
+
+/* ปรับแต่ง Dropdown ให้ดูสวยและสะอาดตาขึ้นตามรูปต้นฉบับ */
+.dropdown-item {
+    font-size: 14px;
+    padding: 10px 20px;
+    color: #555;
+}
+
+.dropdown-item:hover {
+    background-color: var(--oasis-teal);
+    color: white;
+}
+
+/* ส่วนสำคัญ: แก้ไข Overlay เดิมให้ไม่ไปบัง Navbar */
+.hero-overlay-content {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5; /* ปรับค่าให้ต่ำกว่า Navbar และ Dropdown */
+    width: 100%;
+}
+
+/* ส่วนหัว Hero ของหน้าบริการ */
+.services-hero {
+    /* ไล่สีเขียวฟ้าตามรูปภาพ */
+    background: linear-gradient(135deg, #59c19d 0%, #40b7bc 100%); 
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+    line-height: 1.8;
+}
+
+.services-hero h2 {
+    letter-spacing: 1px;
+}
+
+.services-hero p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+.services-hero .lead-sm {
+    font-size: 1.05rem;
+}
+
+/* ปรับระยะห่างของส่วน Card ไม่ให้ชิดกับ Hero เกินไป */
+#group-1 {
+    margin-top: -30px; /* ให้ Card ลอยขึ้นมานิดหน่อยถ้าต้องการความโมเดิร์น หรือลบออกได้ครับ */
+    position: relative;
+    z-index: 5;
+}
+
+/* ตกแต่ง Link ในข้อความ */
+.services-hero span.text-decoration-underline {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.services-hero span.text-decoration-underline:hover {
+    color: #f8f9fa;
+}
+
+/* สี Teal สำหรับ Mind Haven */
+.text-teal {
+    color: #40b7bc !important;
+}
+
+.bg-teal {
+    background-color: #40b7bc !important;
+}
+
+/* ปรับแต่ง List Group */
+.list-group-item {
+    border-left: 0;
+    border-right: 0;
+    transition: background-color 0.2s;
+}
+
+.list-group-item:hover {
+    background-color: #f8fdfc;
+}
+
+.badge {
+    font-weight: 400;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+/* ส่วนหัวสีเขียวไล่เฉด (ใช้ตัวเดิมจากหน้า Service) */
+.services-hero {
+    background: linear-gradient(135deg, #6dd5ad 0%, #40b7bc 100%);
+}
